@@ -1,0 +1,500 @@
+*{
+    box-sizing: border-box;
+}
+
+html, body{
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.Wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: #3D3D3D;
+    background-color: #000000;
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-template-rows: repeat(5,1fr);
+    grid-template-areas: 
+    'SideBar Header Header Header Header Header Header'
+    'SideBar GPM GCPM Form Form Form Form'
+    'SideBar GDPM PPM Form Form Form Form'
+    'SideBar XG XG Shots Shots Radar Radar'
+    'SideBar XGA XGA Shots Shots Radar Radar'
+    ;
+    font-family: 'Saira', sans-serif;
+    color: #fff;
+    position: relative;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    padding-bottom: 2% ;
+}
+.LoadingScreen{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(18, 18, 18, 0.344);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+
+}
+.Circle{
+    width: 10%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: transparent;
+    border: 6px solid;
+    border-width: thick;
+    border-color: #2ECC71 transparent #2ECC71 transparent ;
+    animation: Spinner 2s linear infinite;
+}
+.InnerCircle{
+    width: 80%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 6px solid ;
+    border-color: #1D8550 transparent #1D8550 transparent;
+    transform: rotate(20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: Spinner2 1.95s linear infinite;
+}
+.InnerCircle2{
+    width: 80%;
+    aspect-ratio: 1/1;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 6px solid ;
+    border-color: #0B3D2E transparent #0B3D2E transparent;
+    transform: rotate(40deg);
+    animation: Spinner3 1.9s linear infinite;
+
+}
+@keyframes Spinner {
+  0% {
+    transform: rotate(0deg) ;
+  }
+  50% {
+    transform: rotate(180deg); /* scale up halfway */
+  }
+  100% {
+    transform: rotate(360deg) ;   /* scale back down */
+  }
+}
+@keyframes Spinner3 {
+  0% {
+    transform: rotate(0deg) ;
+  }
+  50% {
+    transform: rotate(180deg); /* scale up halfway */
+  }
+  100% {
+    transform: rotate(360deg);   /* scale back down */
+  }
+}
+@keyframes Spinner2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg); /* scale up halfway */
+  }
+  100% {
+    transform: rotate(360deg);   /* scale back down */
+  }
+}
+
+.Header,
+.GPM,
+.GCPM,
+.GDPM,
+.PPM,
+.Form,
+.SideBar,
+.Radar,
+.XG,
+.XGA,
+.Shots{
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    margin: 2px;
+}
+.Header{
+    grid-area: Header;
+    display: flex;
+    flex-direction: row;
+    background-color: #0B3D2E;
+}
+.LeftWrapper{
+    width: 50%;
+    height: 80%;
+    margin: 1% 0 auto 2%;
+    display: flex;
+    flex-direction: row;
+}
+.ImageWrapper{
+    width: 40%;
+    height: 90%;
+    margin: auto 0;
+    background-image: url(Premier-League-Symbol.png);
+    background-position: center;
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+}
+.HeaderText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    height: 90%;
+    margin: auto 0;
+    border: 2px solid red;
+
+}
+.RightWrapper{
+    width:50%;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.Nav{
+    width: 90%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#NavText{
+    position: relative;
+}
+#NavText::before{
+    position: absolute;
+    content: '';
+    bottom: 10%;
+    left: 0;
+    height: 4%;
+    width: 100%;
+    background-color: #2ECC71;
+     
+}
+.SideBar{
+    grid-area: SideBar;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.SideBarHeading{
+    width: 90%;
+    height: 5vh;
+    /* border: 2px solid  red; */
+    margin: 2% auto;
+    font-size: large;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.GPM{
+    grid-area: GPM;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.GCPM{
+    grid-area: GCPM;
+    background-color: #0B3D2E;
+    
+}
+.GDPM{
+    grid-area: GDPM;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.PPM{
+    grid-area: PPM;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.TopWrapper{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 40%;
+    padding-top: 5%;
+    box-sizing: border-box;
+}
+.TopWrapper img{
+    width: 30%;
+    margin-left: 5%;
+}
+.TopWrapper span{
+    margin-left: 5%;
+}
+#RedText{
+    color: #EA3323;
+}
+.BottomWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60%;
+    font-size: 5rem;
+    color: #2ECC71;
+}
+.Form{
+    grid-area: Form;
+    width: 99%;
+    height: 99%;
+    position: inherit;
+        background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.Form1{
+    width: 95%;
+    margin: 0 auto;
+    /* border: 2px solid red; */
+    height: 70%;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: #0B3D2E;
+    border-radius: 0.5rem;
+    padding-bottom: 1%;
+    position: relative;
+}
+.Input{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "Label1 Label1 Label1 Radio"
+    ;
+    /* border: 2px solid purple; */
+    height:12%;    
+}
+.Label1{
+    grid-area: Label1;
+    display: flex;
+    align-items: center;
+    margin-left: 10%;
+    border-bottom: 1px solid #2ECC71;
+    font-size: small;
+}
+.Radio{
+    grid-area: Radio;
+    transform: scale(0.4);
+}
+.Form2{
+    margin: 15% auto 0 auto;
+    width: 95%;
+    border-radius: 0.5rem;
+    background-color: #0B3D2E;
+    padding: 5%;
+    box-sizing: border-box;
+}
+.SpanContainer{
+    width: 90%;
+    margin-left: 5%;
+    text-align: center;
+    font-size: small;
+}
+.Form2 select{
+    width: 90%;
+    /* background-color: #2ECC71; */
+    border: none;
+    border-radius: 0.5rem;
+    /* color: white; */
+    text-align: center;
+    margin-left: 5%;
+}
+#btnForm1{
+    width: 90%;
+    margin-left: 5% ;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2ECC71;
+    color: black;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+
+}
+#FormChart{
+    transform: scale(0.8)
+}
+#btnForm2{
+    width: 90%;
+    margin-left: 5% ;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #2ECC71;
+    color: black;
+}
+.XG{
+    grid-area: XG;
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.XGLeftWrapper{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4%;
+}
+.XGRightWrapper{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color:#2ECC71
+}
+#XGLabel{
+    font-size: 3rem;
+    color: #2ECC71;
+}
+.XGHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#XGInfo{
+    margin-left: 5%;
+    font-size: small;
+}
+#XGInfo2{
+    font-size: small;
+}
+.XGA{
+    grid-area: XGA;
+    display: flex;
+    flex-direction: row;
+    background-color: #0B3D2E;
+}
+.XGALeftWrapper{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4%;
+}
+.XGARightWrapper{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color:#EA3323
+}
+#XGALabel{
+    font-size: 3rem;
+    color: #EA3323;
+}
+.XGAHeader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#XGAInfo{
+    margin-left: 5%;
+    font-size: small;
+}
+#XGAInfo2{
+    font-size: small;
+}
+.Shots{
+    grid-area: Shots;
+    background-color: transparent;
+    border: 2px solid #0B3D2E;
+}
+.Radar{
+    grid-area: Radar;
+    background-color: #0B3D2E;
+}
+
+
+@media(max-width:500px){
+    .Wrapper{
+    width: 99vw;
+    height: 99vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    background-color: #3D3D3D;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 15vh 10vh 10vh 10vh 10vh 15vh 15vh 10vh 10vh 10vh 10vh 15vh 15vh ;
+    grid-template-areas: 
+    "Header Header"
+    "GPM GCPM"
+    "GPM GCPM"
+    "GDPM PPM"
+    "GDPM PPM"
+    "Form Form"
+    "Form Form"
+    "XG XG"
+    "XG XG"
+    "XGA XGA"
+    "XGA XGA"
+    "Shots Radar"
+    "Shots Radar"
+    ;
+    
+    }
+    .SideBar{
+        display: none;
+    }
+    .HeaderText{
+        font-size: smaller;
+    }
+
+    .Header{
+        flex-direction: column;
+    }
+    .LeftWrapper{
+        width: 80%;
+        margin: 0 auto;
+        height: 70%;
+    }
+    .RightWrapper{
+        height: fit-content;
+        width: 100%;
+        margin: 0;
+        height: 20%;
+    }
+    .Nav{
+        justify-content:space-around ;
+        align-items: first baseline;
+    }
+
+}
+
+
+
