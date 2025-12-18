@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League Stats</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Saira:ital,wght@0,100..900;1,100..900&family=Smythe&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Wrapper">
+        <div class="LoadingScreen">
+
+            <div class="Circle">
+                <div class="InnerCircle">
+                    <div class="InnerCircle2">
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <header class="Header">
+            <div class="LeftWrapper">
+                <div class="ImageWrapper">
+
+                </div>
+                <div class="HeaderText">
+                    <span>Premier League Data</span>
+                    <span>By AM Systems</span>
+                </div>
+            </div>
+            <div class="RightWrapper">
+                <div class="Nav">
+                    <span id="NavText">Top Players</span>
+                    <span id="NavText">Tactical Stats</span>
+                    <span id="NavText">Predictions</span>
+                </div>
+            </div>
+        </header>
+        <div class="SideBar">
+            <div class="SideBarHeading">
+                <span>Select Team</span>
+            </div>
+            <form class="Form1">
+                <!-- <div class="Input">
+
+                    <label for="Team1" class="Label1">Team1</label>
+                    <input type="radio" id="Team1" class="Radio">
+                </div> -->
+             
+            <!-- <button type="submit" id="btnForm2">Submit</button> -->
+            </form>
+            <form class="Form2">
+                <div class="SpanContainer">
+                <span>Compare Teams</span>
+                </div>
+                <select name="Team1" id="SelectTeam1">
+                    <!-- <option value="PH">Team1</option> -->
+                </select>
+                <select name="Team2" id="SelectTeam2">
+                    <!-- <option value="PH1">Team2</option> -->
+                </select>
+                <button type="submit" id="btnForm2">Submit</button>
+            </form>
+
+        </div>
+        <div class="GPM">
+            <div class="TopWrapper">
+                <img src="icons/GoalScored.svg" alt="">
+                <span>Goals <br/> Scored</span>
+            </div>
+            <div class="BottomWrapper">
+                <span>42</span>
+            </div>
+            <div class="BottomWrapper">
+
+            </div>
+        </div>
+        <div class="GCPM">
+            <div class="TopWrapper">
+                <img src="icons/GoalConceded.svg" alt="">
+                <span>Goals <br/> Conceded</span>
+            </div>
+            <div class="BottomWrapper">
+                <span id="RedText">31</span>
+            </div>
+        </div>
+        <div class="GDPM">
+            <div class="TopWrapper">
+                <img src="icons/GoalDifference.svg" alt="">
+                <span>Goal <br/> Difference</span>
+            </div>
+            <div class="BottomWrapper">
+                <span >+11</span>
+            </div> 
+        </div>
+        <div class="PPM">
+            <div class="TopWrapper">
+                <img src="icons/Points.svg" alt="">
+                <span>Points <br/>Per Match</span>
+            </div>
+            <div class="BottomWrapper">
+                <span >2.3</span>
+            </div> 
+        </div>
+        <div class="Form">
+            <canvas id="FormChart">
+
+            </canvas>
+        </div>
+        <div class="XG">
+            <div class="XGLeftWrapper">
+                <div class="XGHeader">
+                <span id="XGLabel">xG</span>
+                <span id="XGInfo">Expected<br/> Goals</span>
+                </div>
+                <span id="XGInfo2">xG estimates the likelihood of a shot resulting in a goal</span>
+            </div>
+            <div class="XGRightWrapper">
+                <span id="XGValue">1.75</span>
+            </div>
+        </div>
+        <div class="XGA">
+            <div class="XGALeftWrapper">
+                <div class="XGAHeader">
+                <span id="XGALabel">xGA</span>
+                <span id="XGAInfo">Expected<br/> Goals Against</span>
+                </div>
+                <span id="XGAInfo2">xGA estimates how many goals a team is likely to concede  </span>
+            </div>
+            <div class="XGARightWrapper">
+                <span id="XGAValue">0.85</span>
+            </div>
+        </div>
+        <div class="Shots">
+            <canvas id="ShotsChart">
+
+            </canvas>
+        </div>
+        <div class="Radar">
+            <canvas id="RadarChart">
+
+            </canvas>
+        </div>
+
+
+
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js" defer></script>
+</body>
+</html>
